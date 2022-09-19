@@ -25,7 +25,8 @@ export const LEAD_STACT = [
   },
   {
     title: 'Vben admin',
-    icon: 'https://vvbin.cn/doc-next/logo.png',
+    // icon: 'https://vvbin.cn/doc-next/logo.png',
+    icon: '/default.jpeg',
     link: 'https://vvbin.cn/doc-next/',
     description: '基于 Vue3.0/Vite/Ant-Design-Vue/TypeScript 的后台解决方案',
   },
