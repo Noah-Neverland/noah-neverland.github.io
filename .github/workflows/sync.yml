@@ -1,8 +1,10 @@
 name: syncToGitee
+
 on:
   push:
     branches:
       - main
+
 jobs:
   repo-sync:
     runs-on: ubuntu-latest
@@ -10,10 +12,10 @@ jobs:
       - name: Mirror the Github organization repos to Gitee.
         uses: Yikun/hub-mirror-action@master
         with:
-          src: 'github/HSS'
-          dst: 'gitee/Hanss'
+          src: github/HSS
+          dst: gitee/Hanss
           dst_key: ${{ secrets.GITEE_RSA_PRIVATE_KEY }}
           dst_token:  ${{ secrets.GITEE_TOKEN }}
           # static_list: "learn-typescript"
           force_update: true
-       debug: true
+        debug: true
