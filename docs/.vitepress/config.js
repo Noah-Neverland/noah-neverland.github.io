@@ -68,7 +68,7 @@ export default defineConfig({
     //   indexName: 'index_name'
     // }
   },
-  outDir: pathResolve('dist'),
+  // outDir: pathResolve('dist'),
   markdown: {
     lineNumbers: false,
   },
