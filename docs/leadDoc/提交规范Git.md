@@ -3,7 +3,7 @@ title: 前端文档doc
 editLink: true
 ---
 
-# GIT 相关参考
+# 项目规范
 
 ## GIT 提交规范
 
