@@ -1,17 +1,19 @@
-name: Sync To Gitee
-
-on: [push, delete]
-
+name: syncToGitee
+on:
+  push:
+    branches:
+      - main
 jobs:
-  mirror_to_gitee:
+  repo-sync:
     runs-on: ubuntu-latest
     steps:
-      - name: 'Checkout'
-        uses: actions/checkout@v1
-      - name: 'Mirror to gitee'
-        uses: pixta-dev/repository-mirroring-action@v1
+      - name: Mirror the Github organization repos to Gitee.
+        uses: Yikun/hub-mirror-action@master
         with:
-          target_repo_url:
-            git@gitee.com:hanshuaishuai/notes_blog.git
-          ssh_private_key:
-            ${{ secrets.GITEE_RSA_PRIVATE_KEY }}
+          src: 'github/HSS'
+          dst: 'gitee/Hanss'
+          dst_key: ${{ secrets.GITEE_RSA_PRIVATE_KEY }}
+          dst_token:  ${{ secrets.GITEE_TOKEN }}
+          # static_list: "learn-typescript"
+          force_update: true
+       debug: true
