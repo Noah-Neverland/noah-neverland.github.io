@@ -7,7 +7,7 @@ function pathResolve(dir) {
 
 export default defineConfig({
   title: '恺恩泰指南',
-  base: '/hss.github.io/',
+  // base: '/hss.github.io/',
   // titleTemplate: false,
   appearance: true,
   description: '',
