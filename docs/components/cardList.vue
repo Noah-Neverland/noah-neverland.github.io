@@ -3,7 +3,7 @@
     <ul>
       <li v-for="(item, index) in list" :key="`${index}_cardlist`" @click="handleClick(item)">
         <div class="cardList-icon" v-if="!!item.icon">
-          <img :src="item.icon" />
+          <img :src="withBase(item.icon)" />
         </div>
         <p class="cardList-title">{{ item.title }}</p>
         <p class="cardList-sub">{{ item.description }}</p>
@@ -14,12 +14,11 @@
 
 <script lang="ts">
   import { defineComponent, ref } from 'vue';
-  // import { useRouter } from 'vitepress';
+  import { withBase } from 'vitepress';
   import { LEAD_STACT } from '../constants/mock';
 
   export default defineComponent({
     setup() {
-      // const { go } = useRouter();
       const list = ref(LEAD_STACT);
 
       function handleClick(item) {
@@ -29,6 +28,7 @@
       return {
         handleClick,
         list,
+        withBase,
       };
     },
   });

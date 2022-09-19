@@ -1,7 +1,7 @@
 export const LEAD_STACT = [
   {
     title: 'Vue',
-    icon: '/hss.github.io/assets/logo/vue.jpeg',
+    icon: '/assets/logo/vue.jpeg',
     link: 'https://cn.vuejs.org/',
     description: '一款用于构建用户界面的 JavaScript 框架',
   },
