@@ -6,7 +6,7 @@ function pathResolve(dir) {
 }
 
 export default defineConfig({
-  title: '恺恩泰指南123s13123',
+  title: '恺恩泰指南',
   base: '/hss.github.io/',
   // titleTemplate: false,
   appearance: true,
@@ -50,10 +50,10 @@ export default defineConfig({
         },
       ],
     },
-    editLink: {
-      pattern: 'https://github.com/vuejs/vitepress/edit/main/docs/:path',
-      text: '编辑这个页面',
-    },
+    // editLink: {
+    //   pattern: 'https://github.com/vuejs/vitepress/edit/main/docs/:path',
+    //   text: '编辑这个页面',
+    // },
     lastUpdated: true,
     footer: {
       message: '苏ICP备2021050542号-2',
