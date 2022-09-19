@@ -11,7 +11,8 @@ export default defineConfig({
   // titleTemplate: false,
   appearance: true,
   description: '',
-  cleanUrls: 'with-subfolders',
+  // cleanUrls: 'with-subfolders',
+  cleanUrls: 'disabled',
   themeConfig: {
     logo: '/logo.png',
     nav: [
