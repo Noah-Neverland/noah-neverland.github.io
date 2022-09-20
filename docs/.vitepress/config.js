@@ -39,16 +39,25 @@ export default defineConfig({
       '/leadDoc/': [
         {
           text: '项目规范',
-          // collapsible: true,
+          collapsible: true,
           // collapsed: true,
           items: [{ text: 'Git提交规范', link: '/leadDoc/提交规范Git' }],
         },
         {
           text: 'GIT相关信息',
-          // collapsible: true,
+          collapsible: true,
           // collapsed: true,
           items: [{ text: 'Git技巧', link: '/leadDoc/技巧Git' }],
         },
+        {
+          text: '技术文档',
+          collapsible: true,
+          // collapsed: true,
+          items: [
+            { text: 'KNT微前端', link: '/leadDoc/KNT微前端' },
+            { text: 'KNT健康平台技术文档', link: '/leadDoc/KNT健康平台技术文档' },
+          ],
+        }
       ],
     },
     // editLink: {
