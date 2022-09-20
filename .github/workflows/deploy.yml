@@ -24,3 +24,17 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: docs/.vitepress/dist
+  repo-sync:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mirror the Github organization repos to Gitee.
+        uses: Yikun/hub-mirror-action@master
+        with:
+          src: github/hanshuaishuai1015@163.com
+          dst: gitee/hanshuaishuai1015@163.com
+          dst_key: ${{ secrets.GITEE_RSA_PRIVATE_KEY }}
+          dst_token:  ${{ secrets.GITEE_TOKEN }}
+          # static_list: "learn-typescript"
+          force_update: true
+          debug: true
