@@ -16,7 +16,7 @@ export default defineConfig({
   themeConfig: {
     logo: '/logo.png',
     nav: [
-      { text: '恺恩泰信息', link: '/knt/运维' },
+      { text: '指南', link: '/knt/运维' },
       {
         text: '前端开发',
         items: [
