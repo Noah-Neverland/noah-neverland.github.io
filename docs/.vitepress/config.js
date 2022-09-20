@@ -56,6 +56,7 @@ export default defineConfig({
           items: [
             { text: 'KNT微前端', link: '/leadDoc/KNT微前端' },
             { text: 'KNT健康平台技术文档', link: '/leadDoc/KNT健康平台技术文档' },
+            { text: 'Taro vs uni-app选型对比', link: '/leadDoc/Taro vs uni-app选型对比' },
           ],
         }
       ],
