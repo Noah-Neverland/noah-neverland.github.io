@@ -85,6 +85,11 @@ git remote prune origin
 git fetch origin dev（dev为远程仓库的分支名）
 ```
 
+## 强制更新远程分支到本地
+```js
+git pull --force origin xxx(远程分支名称):xxx(本地仓库分支)
+```
+
 ## 查看文件修改记录
 
 ```js
