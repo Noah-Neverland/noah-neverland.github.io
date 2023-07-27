@@ -3,9 +3,9 @@ title: 前端文档doc
 editLink: true
 ---
 
-# GIT技巧
+# GIT 技巧
 
-## GIT连接远程库
+## GIT 连接远程库
 
 ```js
 关联一个远程库，使用命令git remote add origin git@server-name:path/repo-name.git
@@ -14,22 +14,22 @@ editLink: true
 如果pull出现fatal: refusing to merge unrelated histories，使用命令git pull origin master --allow-unrelated-histories
 ```
 
-## GIT撤销commit
+## GIT 撤销 commit
 
 ```js
 已提交commit：
 使用命令 git reset --soft HEAD^ 撤回到commit之前
 
 至于这几个参数：
---mixed 
+--mixed
 意思是：不删除工作空间改动代码，撤销commit，并且撤销git add . 操作
 这个为默认参数,git reset --mixed HEAD^ 和 git reset HEAD^ 效果是一样的。
 
---soft  
-不删除工作空间改动代码，撤销commit，不撤销git add . 
+--soft
+不删除工作空间改动代码，撤销commit，不撤销git add .
 
 --hard
-删除工作空间改动代码，撤销commit，撤销git add . 
+删除工作空间改动代码，撤销commit，撤销git add .
 
 注意完成这个操作后，就恢复到了上一次的commit状态。
 
@@ -37,7 +37,7 @@ editLink: true
 使用命令 git checkout -- <file> 撤回<file>文件到未改动之前（git checkout . 撤回所有改动的文件）
 ```
 
-## GIT修改commit信息
+## GIT 修改 commit 信息
 
 ```js
 命令：git commit --amend
@@ -48,7 +48,7 @@ editLink: true
 git commit --amend 重新提交是在日志看不到操作记录的。
 ```
 
-## GIT切换分支 不生成commit记录
+## GIT 切换分支 不生成 commit 记录
 
 ```js
 stash命令可用于临时保存和回复修改，可跨分支。
@@ -86,6 +86,7 @@ git fetch origin dev（dev为远程仓库的分支名）
 ```
 
 ## 强制更新远程分支到本地
+
 ```js
 git pull --force origin xxx(远程分支名称):xxx(本地仓库分支)
 ```
@@ -94,8 +95,8 @@ git pull --force origin xxx(远程分支名称):xxx(本地仓库分支)
 
 ```js
 如果只查文件中某一部分由谁所写：
-git blame 文件名 | grep "查找词" 
-或 
+git blame 文件名 | grep "查找词"
+或
  git blame 文件名 -L a,b
 
 -L 参数表示后面接的是行号(Line)， a,b代表查询文件的第a行到第b行之间的文件内容情况。
@@ -137,4 +138,14 @@ git blame webpack.mix.js -L 5,5
     -M[<得分>]            找到文件内及跨文件的行移动
     -L <n,m>              只处理行范围在 n 和 m 之间的，从 1 开始
     --abbrev[=<n>]        用 <n> 位数字显示 SHA-1 哈希值
+```
+
+## GIT 克隆指定版本
+
+```js
+git clone -b v3.2.47 --depth=1 https://github.com/vuejs/core.git
+
+-b 后面写上指定 版本标签 ,  即 tag, 比如 v5.2.0
+
+--depth 表示克隆深度, 1 表示只克隆最新的版本. 因为如果项目迭代的版本很多, 克隆会很慢
 ```
