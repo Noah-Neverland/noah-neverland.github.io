@@ -58,6 +58,7 @@ export default defineConfig({
             { text: 'KNT健康平台技术文档', link: '/leadDoc/KNT健康平台技术文档' },
             { text: 'Taro vs uni-app选型对比', link: '/leadDoc/TaroVSuni-app选型对比' },
             { text: 'QuickWebServe', link: '/leadDoc/QuickWebServe' },
+            { text: 'Prettier', link: '/leadDoc/Prettier' },
           ],
         },
       ],
