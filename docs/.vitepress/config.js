@@ -57,8 +57,9 @@ export default defineConfig({
             { text: 'KNT微前端', link: '/leadDoc/KNT微前端' },
             { text: 'KNT健康平台技术文档', link: '/leadDoc/KNT健康平台技术文档' },
             { text: 'Taro vs uni-app选型对比', link: '/leadDoc/TaroVSuni-app选型对比' },
+            { text: 'QuickWebServe', link: '/leadDoc/QuickWebServe' },
           ],
-        }
+        },
       ],
     },
     // editLink: {
@@ -72,8 +73,8 @@ export default defineConfig({
     },
     docFooter: {
       prev: '上一页',
-      next: '下一页'
-    }
+      next: '下一页',
+    },
     // algolia: {
     //   apiKey: 'your_api_key',
     //   indexName: 'index_name'
