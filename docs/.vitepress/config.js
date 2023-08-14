@@ -60,7 +60,7 @@ export default defineConfig({
             { text: 'QuickWebServe', link: '/leadDoc/QuickWebServe' },
             { text: 'Prettier', link: '/leadDoc/Prettier' },
             { text: 'Nginx', link: '/leadDoc/Nginx' },
-            { text: 'MacOs', link: '/leadDoc/Mac' },
+            { text: 'MacOs', link: '/leadDoc/MacOs' },
           ],
         },
       ],
