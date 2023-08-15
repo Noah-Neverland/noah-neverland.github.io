@@ -61,6 +61,7 @@ export default defineConfig({
             { text: 'Prettier', link: '/leadDoc/Prettier' },
             { text: 'Nginx', link: '/leadDoc/Nginx' },
             { text: 'MacOs', link: '/leadDoc/MacOs' },
+            { text: 'AntDesignVue', link: '/leadDoc/AntDesignVue' },
           ],
         },
       ],
