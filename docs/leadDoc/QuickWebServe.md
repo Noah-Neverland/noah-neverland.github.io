@@ -5,7 +5,7 @@ editLink: true
 
 # serve 快速创建一个 web 服务器的 npm 包
 
-### 使用流程
+## 使用流程
 
 1. 全局安装
 
@@ -37,4 +37,11 @@ ctrl+c
 
 ```JavaScript{.line-numbers}
 serve --help/-h
+```
+
+## 解决刷新页面 404 问题
+
+```js
+// 在命令里面加入个-s参数
+serve -s -l 80
 ```
