@@ -27,7 +27,7 @@ editLink: true
           - name: Sync to Gitee.
             uses: wearerequired/git-mirror-action@master
             env:
-              SSH_PRIVATE_KEY: ${{ secrets.GITEE_RSA_PRIVATE_KEY }}
+              SSH_PRIVATE_KEY: '${{ secrets.GITEE_RSA_PRIVATE_KEY }}' # 使用的时候 去掉单引号
             with:
               # 来源仓库
               source-repo: 'git@github.com:Noah-Neverland/taro-template.git' #此处改成需要同步到gitee的仓库地址
