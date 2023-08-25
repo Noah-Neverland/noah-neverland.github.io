@@ -62,6 +62,7 @@ export default defineConfig({
             { text: 'Nginx', link: '/leadDoc/Nginx' },
             { text: 'MacOs', link: '/leadDoc/MacOs' },
             { text: 'AntDesignVue', link: '/leadDoc/AntDesignVue' },
+            { text: 'GithubSynsToGitee', link: '/leadDoc/GithubSynsToGitee' },
           ],
         },
       ],
