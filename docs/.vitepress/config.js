@@ -6,7 +6,7 @@ function pathResolve(dir) {
 }
 
 export default defineConfig({
-  title: '恺恩泰指南',
+  title: '小朴Plus',
   // base: '/hss.github.io/',
   // titleTemplate: false,
   appearance: true,
@@ -16,7 +16,7 @@ export default defineConfig({
   themeConfig: {
     logo: '/logo.png',
     nav: [
-      { text: '指南', link: '/knt/运维' },
+      { text: '指南', link: '/noah/utils/常用工具' },
       {
         text: '前端开发',
         items: [
@@ -27,12 +27,16 @@ export default defineConfig({
       { text: '后端开发', link: '/rear/' },
     ],
     sidebar: {
-      '/knt/': [
+      '/noah/': [
+        {
+          text: 'Noah',
+          items: [{ text: '实用工具', link: '/noah/utils/常用工具' }],
+        },
         {
           text: '恺恩泰信息',
           items: [
-            { text: '运维部署测试', link: '/knt/运维' },
-            { text: '互医项目', link: '/knt/互医项目' },
+            { text: '运维部署测试', link: '/noah/knt/运维' },
+            { text: '互医项目', link: '/noah/knt/互医项目' },
           ],
         },
       ],
@@ -73,8 +77,8 @@ export default defineConfig({
     // },
     lastUpdated: true,
     footer: {
-      message: '苏ICP备2021050542号-2',
-      copyright: 'Copyright © 2021恺恩泰（南京）科技有限公司',
+      message: '“遇你，予你，与你，余你”',
+      copyright: '安稳于日常，浅喜与光阴，阅已、悦己、乐已',
     },
     docFooter: {
       prev: '上一页',
