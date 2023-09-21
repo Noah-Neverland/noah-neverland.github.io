@@ -67,6 +67,7 @@ export default defineConfig({
             { text: 'MacOs', link: '/leadDoc/MacOs' },
             { text: 'AntDesignVue', link: '/leadDoc/AntDesignVue' },
             { text: 'GithubSynsToGitee', link: '/leadDoc/GithubSynsToGitee' },
+            { text: 'Yargs', link: '/leadDoc/Yargs入门.md' },
           ],
         },
       ],
