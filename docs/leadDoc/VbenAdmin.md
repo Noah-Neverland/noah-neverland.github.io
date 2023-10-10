@@ -7,7 +7,7 @@ editLink: true
 
 ## Form 组件
 
-**Use**
+**Usage:**
 
 ```js
 // tableData.tsx
@@ -157,7 +157,7 @@ export function getModalTagFormConfig(): Partial<FormProps> {
 
 ## Table
 
-**Use**
+**Usage:**
 
 ```js
 // tableData.tsx（模版来自 售后管理列表页面）
