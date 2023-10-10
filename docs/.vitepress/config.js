@@ -68,6 +68,7 @@ export default defineConfig({
             { text: 'AntDesignVue', link: '/leadDoc/AntDesignVue' },
             { text: 'GithubSynsToGitee', link: '/leadDoc/GithubSynsToGitee' },
             { text: 'Yargs', link: '/leadDoc/Yargs入门.md' },
+            { text: 'VbenAdmin', link: '/leadDoc/VbenAdmin.md' },
           ],
         },
       ],
