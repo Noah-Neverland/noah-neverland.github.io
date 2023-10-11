@@ -54,6 +54,16 @@ export default defineConfig({
           items: [{ text: 'Git技巧', link: '/leadDoc/技巧Git' }],
         },
         {
+          text: 'Utils',
+          collapsible: true,
+          // collapsed: true,
+          items: [
+            { text: 'utils', link: '/leadDoc/utils/utils.md' },
+            { text: 'is', link: '/leadDoc/utils/is.md' },
+            { text: 'dateUtil', link: '/leadDoc/utils/dateUtil.md' },
+          ],
+        },
+        {
           text: '技术文档',
           collapsible: true,
           // collapsed: true,

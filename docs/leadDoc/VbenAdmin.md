@@ -12,6 +12,16 @@ editLink: true
 ```js
 // tableData.tsx
 import { FormProps, FormSchema } from '/@/components/Table';
+import { isPhone } from '/@/utils/is';
+
+// 验证手机号(非必填时如果有输入，手机号才进行校验)
+const promotionRules = async (_rule: Rule, value: string) => {
+  if (!isPhone(value) && !!value) {
+    return Promise.reject('联系方式输入不正确，请重新输入');
+  } else {
+    return Promise.resolve();
+  }
+};
 
 export function getModalTagFormConfig(): Partial<FormProps> {
   const schemas: FormSchema[] = [
@@ -28,6 +38,19 @@ export function getModalTagFormConfig(): Partial<FormProps> {
       },
       required: true,
       itemProps: { validateTrigger: 'blur' }, // 用于解决component为ApiSelect且此选择为必填时，第一次选择（已选中选项）会提示请选择
+    },
+    {
+      field: 'contactNumber',
+      label: '联系电话',
+      labelWidth: 100,
+      component: 'Input',
+      rules: [{ validator: promotionRules, trigger: 'blur' }], // 非必填 校验输入的手机号是否正确，不输入则不校验
+      colProps: {
+        span: 24,
+      },
+      componentProps: {
+        maxLength: 20,
+      },
     },
   ];
 
