@@ -149,3 +149,9 @@ git clone -b v3.2.47 --depth=1 https://github.com/vuejs/core.git
 
 --depth 表示克隆深度, 1 表示只克隆最新的版本. 因为如果项目迭代的版本很多, 克隆会很慢
 ```
+
+## GIT 重置 remote url
+
+```js
+git remote set-url origin <新的仓库地址>
+```
