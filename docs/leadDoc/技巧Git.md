@@ -155,3 +155,9 @@ git clone -b v3.2.47 --depth=1 https://github.com/vuejs/core.git
 ```js
 git remote set-url origin <新的仓库地址>
 ```
+
+## 通过以下命令查看当前分支是从哪个分支切出来的
+
+```js
+git log --oneline --decorate --graph --all
+```
