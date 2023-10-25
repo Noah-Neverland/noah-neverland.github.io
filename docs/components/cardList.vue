@@ -66,6 +66,8 @@
       }
     }
     &-title {
+      color: #a7a7a7;
+      font-weight: bold;
       font-size: 24px;
       margin: 20px 0;
     }
