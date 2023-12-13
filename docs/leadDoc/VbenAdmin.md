@@ -23,6 +23,18 @@ const promotionRules = async (_rule: Rule, value: string) => {
   }
 };
 
+// Inputnumber 输入正整数
+const limitDecimals = (value: string | number): string => {
+  const reg = /^(\-)*(\d+).*$/;
+  if (typeof value === 'string') {
+    return !isNaN(Number(value)) ? value.replace(reg, '$1$2') : '';
+  } else if (typeof value === 'number') {
+    return !isNaN(value) ? String(value).replace(reg, '$1$2') : '';
+  } else {
+    return '';
+  }
+};
+
 export function getModalTagFormConfig(): Partial<FormProps> {
   const schemas: FormSchema[] = [
     {
@@ -50,6 +62,18 @@ export function getModalTagFormConfig(): Partial<FormProps> {
       },
       componentProps: {
         maxLength: 20,
+      },
+    },
+    {
+      field: 'sort',
+      component: 'InputNumber',
+      label: '展示顺序',
+      defaultValue: 1,
+      componentProps: {
+        min: 1,
+        max: 999,
+        formatter: limitDecimals,
+        parser: limitDecimals,
       },
     },
   ];
