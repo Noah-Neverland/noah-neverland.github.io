@@ -7,7 +7,7 @@
     <meta name="description" content="A VitePress site">
     <link rel="stylesheet" href="/assets/style.5e87cdf3.css">
     <link rel="modulepreload" href="/assets/app.85806792.js">
-    <link rel="modulepreload" href="/assets/leadDoc_VbenAdmin.md.7b41b47d.lean.js">
+    <link rel="modulepreload" href="/assets/leadDoc_VbenAdmin.md.f6f85fa7.lean.js">
     
     <script id="check-dark-light">(()=>{const e=localStorage.getItem("vitepress-theme-appearance"),a=window.matchMedia("(prefers-color-scheme: dark)").matches;(!e||e==="auto"?a:e==="dark")&&document.documentElement.classList.add("dark")})();</script>
   </head>
@@ -159,10 +159,32 @@
 <span class="line"><span style="color:#89DDFF;">    @ok=&quot;handleSumbit&quot;</span></span>
 <span class="line"><span style="color:#89DDFF;">  &gt;</span></span>
 <span class="line"><span style="color:#A6ACCD;">    </span><span style="color:#89DDFF;">&lt;</span><span style="color:#F07178;">div</span><span style="color:#89DDFF;"> </span><span style="color:#C792EA;">class</span><span style="color:#89DDFF;">=</span><span style="color:#89DDFF;">&quot;</span><span style="color:#C3E88D;">p-4 scroll-wrap</span><span style="color:#89DDFF;">&quot;</span><span style="color:#89DDFF;"> </span><span style="color:#C792EA;">v-loading</span><span style="color:#89DDFF;">=</span><span style="color:#89DDFF;">&quot;</span><span style="color:#C3E88D;">loading</span><span style="color:#89DDFF;">&quot;</span><span style="color:#89DDFF;">&gt;</span></span>
-<span class="line"><span style="color:#A6ACCD;">      </span><span style="color:#89DDFF;">&lt;</span><span style="color:#FFCB6B;">BasicForm</span><span style="color:#89DDFF;"> @register=&quot;register&quot; /&gt;</span></span>
+<span class="line"><span style="color:#A6ACCD;">      </span><span style="color:#89DDFF;">&lt;</span><span style="color:#FFCB6B;">BasicForm</span><span style="color:#89DDFF;"> @register=&quot;register&quot;&gt;</span></span>
+<span class="line"><span style="color:#89DDFF;">        </span><span style="color:#676E95;">// 下拉选里添加新增操作（可参考供应商模块新增主体）</span></span>
+<span class="line"><span style="color:#89DDFF;">        &lt;template #customSlot=&quot;{ model, </span><span style="color:#C792EA;">field</span><span style="color:#89DDFF;"> }&quot;&gt;</span></span>
+<span class="line"><span style="color:#89DDFF;">          &lt;a-select </span><span style="color:#C792EA;">v-model</span><span style="color:#89DDFF;">:</span><span style="color:#C792EA;">value</span><span style="color:#89DDFF;">=</span><span style="color:#89DDFF;">&quot;</span><span style="color:#C3E88D;">model[field]</span><span style="color:#89DDFF;">&quot;</span><span style="color:#89DDFF;"> :options=&quot;options&quot; </span><span style="color:#C792EA;">placeholder</span><span style="color:#89DDFF;">=</span><span style="color:#89DDFF;">&quot;</span><span style="color:#C3E88D;">请选择</span><span style="color:#89DDFF;">&quot;</span><span style="color:#89DDFF;">&gt;</span></span>
+<span class="line"><span style="color:#A6ACCD;">            </span><span style="color:#89DDFF;">&lt;</span><span style="color:#F07178;">template</span><span style="color:#89DDFF;"> #dropdownRender=&quot;{ menuNode: </span><span style="color:#C792EA;">menu</span><span style="color:#89DDFF;"> }&quot;&gt;</span></span>
+<span class="line"><span style="color:#89DDFF;">              &lt;v-nodes :vnodes=&quot;menu&quot; /&gt;</span></span>
+<span class="line"><span style="color:#A6ACCD;">              </span><span style="color:#89DDFF;">&lt;</span><span style="color:#FFCB6B;">a-divider</span><span style="color:#89DDFF;"> </span><span style="color:#C792EA;">style</span><span style="color:#89DDFF;">=</span><span style="color:#89DDFF;">&quot;</span><span style="color:#C3E88D;">margin: 4px 0</span><span style="color:#89DDFF;">&quot;</span><span style="color:#89DDFF;"> /&gt;</span></span>
+<span class="line"><span style="color:#A6ACCD;">              </span><span style="color:#89DDFF;">&lt;</span><span style="color:#FFCB6B;">a-space</span><span style="color:#89DDFF;"> </span><span style="color:#C792EA;">style</span><span style="color:#89DDFF;">=</span><span style="color:#89DDFF;">&quot;</span><span style="color:#C3E88D;">padding: 4px 8px</span><span style="color:#89DDFF;">&quot;</span><span style="color:#89DDFF;">&gt;</span></span>
+<span class="line"><span style="color:#A6ACCD;">                </span><span style="color:#89DDFF;">&lt;</span><span style="color:#FFCB6B;">a-button</span></span>
+<span class="line"><span style="color:#89DDFF;">                  </span><span style="color:#C792EA;">type</span><span style="color:#89DDFF;">=</span><span style="color:#89DDFF;">&quot;</span><span style="color:#C3E88D;">text</span><span style="color:#89DDFF;">&quot;</span></span>
+<span class="line"><span style="color:#89DDFF;">                  @mousedown=&quot;(e) =&gt; e.preventDefault()&quot;</span></span>
+<span class="line"><span style="color:#89DDFF;">                  @click=&quot;openModal()&quot;</span></span>
+<span class="line"><span style="color:#89DDFF;">                &gt;</span></span>
+<span class="line"><span style="color:#A6ACCD;">                  </span><span style="color:#89DDFF;">&lt;</span><span style="color:#F07178;">template</span><span style="color:#89DDFF;"> #icon&gt;</span></span>
+<span class="line"><span style="color:#89DDFF;">                    &lt;plus-outlined /&gt;</span></span>
+<span class="line"><span style="color:#A6ACCD;">                  </span><span style="color:#89DDFF;">&lt;/</span><span style="color:#F07178;">template</span><span style="color:#89DDFF;">&gt;</span></span>
+<span class="line"><span style="color:#A6ACCD;">                  新增主体</span></span>
+<span class="line"><span style="color:#A6ACCD;">                </span><span style="color:#89DDFF;">&lt;/</span><span style="color:#FFCB6B;">a-button</span><span style="color:#89DDFF;">&gt;</span></span>
+<span class="line"><span style="color:#A6ACCD;">              </span><span style="color:#89DDFF;">&lt;/</span><span style="color:#FFCB6B;">a-space</span><span style="color:#89DDFF;">&gt;</span></span>
+<span class="line"><span style="color:#A6ACCD;">            </span><span style="color:#89DDFF;">&lt;/</span><span style="color:#F07178;">template</span><span style="color:#89DDFF;">&gt;</span></span>
+<span class="line"><span style="color:#A6ACCD;">          </span><span style="color:#89DDFF;">&lt;/</span><span style="color:#FFCB6B;">a-select</span><span style="color:#89DDFF;">&gt;</span></span>
+<span class="line"><span style="color:#A6ACCD;">        </span><span style="color:#89DDFF;">&lt;/</span><span style="color:#F07178;">template</span><span style="color:#89DDFF;">&gt;</span></span>
+<span class="line"><span style="color:#A6ACCD;">      </span><span style="color:#89DDFF;">&lt;/</span><span style="color:#FFCB6B;">BasicForm</span><span style="color:#89DDFF;">&gt;</span></span>
 <span class="line"><span style="color:#A6ACCD;">    </span><span style="color:#89DDFF;">&lt;/</span><span style="color:#F07178;">div</span><span style="color:#89DDFF;">&gt;</span></span>
-<span class="line"><span style="color:#A6ACCD;">  </span><span style="color:#89DDFF;">&lt;/</span><span style="color:#FFCB6B;">BasicModal</span><span style="color:#89DDFF;">&gt;</span></span>
-<span class="line"><span style="color:#89DDFF;">&lt;/</span><span style="color:#F07178;">template</span><span style="color:#89DDFF;">&gt;</span></span>
+<span class="line"><span style="color:#A6ACCD;">  </span><span style="color:#89DDFF;">&lt;/</span><span style="color:#A6ACCD;">BasicModal</span><span style="color:#89DDFF;">&gt;</span></span>
+<span class="line"><span style="color:#89DDFF;">&lt;/</span><span style="color:#A6ACCD;">template</span><span style="color:#89DDFF;">&gt;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#89DDFF;">&lt;</span><span style="color:#F07178;">style</span><span style="color:#89DDFF;"> </span><span style="color:#C792EA;">lang</span><span style="color:#89DDFF;">=</span><span style="color:#89DDFF;">&quot;</span><span style="color:#C3E88D;">less</span><span style="color:#89DDFF;">&quot;</span><span style="color:#89DDFF;">&gt;</span></span>
 <span class="line"><span style="color:#A6ACCD;">  .customClass </span><span style="color:#89DDFF;">{</span></span>
@@ -176,8 +198,25 @@
 <span class="line"><span style="color:#A6ACCD;">  </span><span style="color:#89DDFF;">}</span></span>
 <span class="line"><span style="color:#89DDFF;">&lt;/</span><span style="color:#F07178;">style</span><span style="color:#89DDFF;">&gt;</span></span>
 <span class="line"></span></code></pre></div><div class="language-js"><button class="copy"></button><span class="lang">js</span><pre><code><span class="line"><span style="color:#676E95;">// index.vue</span></span>
+<span class="line"><span style="color:#89DDFF;">&lt;</span><span style="color:#F07178;">script</span><span style="color:#89DDFF;"> </span><span style="color:#C792EA;">lang</span><span style="color:#89DDFF;">=</span><span style="color:#89DDFF;">&quot;</span><span style="color:#C3E88D;">ts</span><span style="color:#89DDFF;">&quot;</span><span style="color:#89DDFF;">&gt;</span></span>
+<span class="line"><span style="color:#A6ACCD;">  import </span><span style="color:#89DDFF;">{</span><span style="color:#A6ACCD;"> defineComponent </span><span style="color:#89DDFF;">}</span><span style="color:#A6ACCD;"> from &#39;vue&#39;;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A6ACCD;">  const VNodes = defineComponent(</span><span style="color:#89DDFF;">{</span></span>
+<span class="line"><span style="color:#A6ACCD;">    props: </span><span style="color:#89DDFF;">{</span></span>
+<span class="line"><span style="color:#A6ACCD;">      </span><span style="color:#F07178;">vnodes</span><span style="color:#89DDFF;">:</span><span style="color:#A6ACCD;"> </span><span style="color:#89DDFF;">{</span></span>
+<span class="line"><span style="color:#A6ACCD;">        </span><span style="color:#F07178;">type</span><span style="color:#89DDFF;">:</span><span style="color:#A6ACCD;"> Object</span><span style="color:#89DDFF;">,</span></span>
+<span class="line"><span style="color:#A6ACCD;">        </span><span style="color:#F07178;">required</span><span style="color:#89DDFF;">:</span><span style="color:#A6ACCD;"> </span><span style="color:#FF9CAC;">true</span><span style="color:#89DDFF;">,</span></span>
+<span class="line"><span style="color:#A6ACCD;">      </span><span style="color:#89DDFF;">},</span></span>
+<span class="line"><span style="color:#A6ACCD;">    </span><span style="color:#89DDFF;">},</span></span>
+<span class="line"><span style="color:#A6ACCD;">    </span><span style="color:#82AAFF;">render</span><span style="color:#A6ACCD;">() </span><span style="color:#89DDFF;">{</span></span>
+<span class="line"><span style="color:#A6ACCD;">      return this.vnodes;</span></span>
+<span class="line"><span style="color:#A6ACCD;">    </span><span style="color:#89DDFF;">},</span></span>
+<span class="line"><span style="color:#A6ACCD;">  </span><span style="color:#89DDFF;">}</span><span style="color:#A6ACCD;">);</span></span>
+<span class="line"><span style="color:#89DDFF;">&lt;/</span><span style="color:#F07178;">script</span><span style="color:#89DDFF;">&gt;</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#89DDFF;">&lt;</span><span style="color:#F07178;">script</span><span style="color:#89DDFF;"> </span><span style="color:#C792EA;">lang</span><span style="color:#89DDFF;">=</span><span style="color:#89DDFF;">&quot;</span><span style="color:#C3E88D;">ts</span><span style="color:#89DDFF;">&quot;</span><span style="color:#89DDFF;"> </span><span style="color:#C792EA;">setup</span><span style="color:#89DDFF;">&gt;</span></span>
 <span class="line"><span style="color:#A6ACCD;">  import </span><span style="color:#89DDFF;">{</span><span style="color:#A6ACCD;"> useModal </span><span style="color:#89DDFF;">}</span><span style="color:#A6ACCD;"> from &#39;/@/components/Modal&#39;;</span></span>
+<span class="line"><span style="color:#A6ACCD;">  import </span><span style="color:#89DDFF;">{</span><span style="color:#A6ACCD;"> PlusOutlined </span><span style="color:#89DDFF;">}</span><span style="color:#A6ACCD;"> from &#39;@ant-design/icons-vue&#39;;</span></span>
 <span class="line"><span style="color:#A6ACCD;">  import Modal from &#39;xxx&#39;;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#A6ACCD;">  const [registerModal, </span><span style="color:#89DDFF;">{</span><span style="color:#A6ACCD;"> openModal </span><span style="color:#89DDFF;">}</span><span style="color:#A6ACCD;">] = useModal();</span></span>
@@ -715,7 +754,7 @@
 <span class="line"><span style="color:#A6ACCD;">  </span><span style="color:#89DDFF;">}</span><span style="color:#A6ACCD;">;</span></span>
 <span class="line"><span style="color:#89DDFF;">&lt;/</span><span style="color:#F07178;">script</span><span style="color:#89DDFF;">&gt;</span></span>
 <span class="line"></span></code></pre></div></div></div></main><!--[--><!--]--><footer class="VPDocFooter" data-v-f0af2311 data-v-a54a85bd><!----><div class="prev-next" data-v-a54a85bd><div class="pager" data-v-a54a85bd><a class="pager-link prev" href="/leadDoc/Yargs%E5%85%A5%E9%97%A8.html" data-v-a54a85bd><span class="desc" data-v-a54a85bd>上一页</span><span class="title" data-v-a54a85bd>Yargs</span></a></div><div class="has-prev pager" data-v-a54a85bd><!----></div></div></footer><!--[--><!--]--></div></div></div></div></div><footer class="VPFooter has-sidebar" data-v-ca9ccb7e data-v-9f24cc86><div class="container" data-v-9f24cc86><p class="message" data-v-9f24cc86>“遇你，予你，与你，余你”</p><p class="copyright" data-v-9f24cc86>安稳于日常，浅喜与光阴，阅已、悦己、乐已</p></div></footer><!--[--><!--]--></div></div>
-    <script>__VP_HASH_MAP__ = JSON.parse("{\"index.md\":\"18692e65\",\"leaddoc_antdesignvue.md\":\"efca4009\",\"leaddoc_githubsynstogitee.md\":\"76783946\",\"leaddoc_knt健康平台技术文档.md\":\"4e7e5f7e\",\"leaddoc_knt微前端.md\":\"1607d07e\",\"leaddoc_macos.md\":\"b50c483f\",\"leaddoc_nginx.md\":\"f804e95e\",\"leaddoc_prettier.md\":\"cf75bb9a\",\"leaddoc_quickwebserve.md\":\"f9a083a6\",\"leaddoc_tarovsuni-app选型对比.md\":\"c4f322d6\",\"leaddoc_vbenadmin.md\":\"7b41b47d\",\"leaddoc_yargs入门.md\":\"90eaf77a\",\"leaddoc_utils_dateutil.md\":\"3bb87d54\",\"leaddoc_utils_is.md\":\"8e851880\",\"leaddoc_utils_utils.md\":\"2857d598\",\"leaddoc_技巧git.md\":\"9425ec63\",\"leaddoc_提交规范git.md\":\"2a66b0f1\",\"noah_knt_互医项目.md\":\"32a72d9b\",\"noah_knt_运维.md\":\"8fc9b16d\",\"noah_utils_常用工具.md\":\"2cdab3c3\",\"pages_前端技术栈.md\":\"da2474e7\",\"rear_index.md\":\"0585b5a6\"}")</script>
+    <script>__VP_HASH_MAP__ = JSON.parse("{\"index.md\":\"18692e65\",\"leaddoc_antdesignvue.md\":\"efca4009\",\"leaddoc_githubsynstogitee.md\":\"76783946\",\"leaddoc_knt健康平台技术文档.md\":\"4e7e5f7e\",\"leaddoc_knt微前端.md\":\"1607d07e\",\"leaddoc_macos.md\":\"b50c483f\",\"leaddoc_nginx.md\":\"f804e95e\",\"leaddoc_prettier.md\":\"cf75bb9a\",\"leaddoc_quickwebserve.md\":\"f9a083a6\",\"leaddoc_tarovsuni-app选型对比.md\":\"c4f322d6\",\"leaddoc_vbenadmin.md\":\"f6f85fa7\",\"leaddoc_yargs入门.md\":\"90eaf77a\",\"leaddoc_utils_dateutil.md\":\"3bb87d54\",\"leaddoc_utils_is.md\":\"8e851880\",\"leaddoc_utils_utils.md\":\"2857d598\",\"leaddoc_技巧git.md\":\"9425ec63\",\"leaddoc_提交规范git.md\":\"2a66b0f1\",\"noah_knt_互医项目.md\":\"32a72d9b\",\"noah_knt_运维.md\":\"8fc9b16d\",\"noah_utils_常用工具.md\":\"2cdab3c3\",\"pages_前端技术栈.md\":\"da2474e7\",\"rear_index.md\":\"0585b5a6\"}")</script>
     <script type="module" async src="/assets/app.85806792.js"></script>
     
   </body>

@@ -145,10 +145,32 @@ import{_ as s,o as n,c as a,a as l}from"./app.85806792.js";const i=JSON.parse('{
 <span class="line"><span style="color:#89DDFF;">    @ok=&quot;handleSumbit&quot;</span></span>
 <span class="line"><span style="color:#89DDFF;">  &gt;</span></span>
 <span class="line"><span style="color:#A6ACCD;">    </span><span style="color:#89DDFF;">&lt;</span><span style="color:#F07178;">div</span><span style="color:#89DDFF;"> </span><span style="color:#C792EA;">class</span><span style="color:#89DDFF;">=</span><span style="color:#89DDFF;">&quot;</span><span style="color:#C3E88D;">p-4 scroll-wrap</span><span style="color:#89DDFF;">&quot;</span><span style="color:#89DDFF;"> </span><span style="color:#C792EA;">v-loading</span><span style="color:#89DDFF;">=</span><span style="color:#89DDFF;">&quot;</span><span style="color:#C3E88D;">loading</span><span style="color:#89DDFF;">&quot;</span><span style="color:#89DDFF;">&gt;</span></span>
-<span class="line"><span style="color:#A6ACCD;">      </span><span style="color:#89DDFF;">&lt;</span><span style="color:#FFCB6B;">BasicForm</span><span style="color:#89DDFF;"> @register=&quot;register&quot; /&gt;</span></span>
+<span class="line"><span style="color:#A6ACCD;">      </span><span style="color:#89DDFF;">&lt;</span><span style="color:#FFCB6B;">BasicForm</span><span style="color:#89DDFF;"> @register=&quot;register&quot;&gt;</span></span>
+<span class="line"><span style="color:#89DDFF;">        </span><span style="color:#676E95;">// \u4E0B\u62C9\u9009\u91CC\u6DFB\u52A0\u65B0\u589E\u64CD\u4F5C\uFF08\u53EF\u53C2\u8003\u4F9B\u5E94\u5546\u6A21\u5757\u65B0\u589E\u4E3B\u4F53\uFF09</span></span>
+<span class="line"><span style="color:#89DDFF;">        &lt;template #customSlot=&quot;{ model, </span><span style="color:#C792EA;">field</span><span style="color:#89DDFF;"> }&quot;&gt;</span></span>
+<span class="line"><span style="color:#89DDFF;">          &lt;a-select </span><span style="color:#C792EA;">v-model</span><span style="color:#89DDFF;">:</span><span style="color:#C792EA;">value</span><span style="color:#89DDFF;">=</span><span style="color:#89DDFF;">&quot;</span><span style="color:#C3E88D;">model[field]</span><span style="color:#89DDFF;">&quot;</span><span style="color:#89DDFF;"> :options=&quot;options&quot; </span><span style="color:#C792EA;">placeholder</span><span style="color:#89DDFF;">=</span><span style="color:#89DDFF;">&quot;</span><span style="color:#C3E88D;">\u8BF7\u9009\u62E9</span><span style="color:#89DDFF;">&quot;</span><span style="color:#89DDFF;">&gt;</span></span>
+<span class="line"><span style="color:#A6ACCD;">            </span><span style="color:#89DDFF;">&lt;</span><span style="color:#F07178;">template</span><span style="color:#89DDFF;"> #dropdownRender=&quot;{ menuNode: </span><span style="color:#C792EA;">menu</span><span style="color:#89DDFF;"> }&quot;&gt;</span></span>
+<span class="line"><span style="color:#89DDFF;">              &lt;v-nodes :vnodes=&quot;menu&quot; /&gt;</span></span>
+<span class="line"><span style="color:#A6ACCD;">              </span><span style="color:#89DDFF;">&lt;</span><span style="color:#FFCB6B;">a-divider</span><span style="color:#89DDFF;"> </span><span style="color:#C792EA;">style</span><span style="color:#89DDFF;">=</span><span style="color:#89DDFF;">&quot;</span><span style="color:#C3E88D;">margin: 4px 0</span><span style="color:#89DDFF;">&quot;</span><span style="color:#89DDFF;"> /&gt;</span></span>
+<span class="line"><span style="color:#A6ACCD;">              </span><span style="color:#89DDFF;">&lt;</span><span style="color:#FFCB6B;">a-space</span><span style="color:#89DDFF;"> </span><span style="color:#C792EA;">style</span><span style="color:#89DDFF;">=</span><span style="color:#89DDFF;">&quot;</span><span style="color:#C3E88D;">padding: 4px 8px</span><span style="color:#89DDFF;">&quot;</span><span style="color:#89DDFF;">&gt;</span></span>
+<span class="line"><span style="color:#A6ACCD;">                </span><span style="color:#89DDFF;">&lt;</span><span style="color:#FFCB6B;">a-button</span></span>
+<span class="line"><span style="color:#89DDFF;">                  </span><span style="color:#C792EA;">type</span><span style="color:#89DDFF;">=</span><span style="color:#89DDFF;">&quot;</span><span style="color:#C3E88D;">text</span><span style="color:#89DDFF;">&quot;</span></span>
+<span class="line"><span style="color:#89DDFF;">                  @mousedown=&quot;(e) =&gt; e.preventDefault()&quot;</span></span>
+<span class="line"><span style="color:#89DDFF;">                  @click=&quot;openModal()&quot;</span></span>
+<span class="line"><span style="color:#89DDFF;">                &gt;</span></span>
+<span class="line"><span style="color:#A6ACCD;">                  </span><span style="color:#89DDFF;">&lt;</span><span style="color:#F07178;">template</span><span style="color:#89DDFF;"> #icon&gt;</span></span>
+<span class="line"><span style="color:#89DDFF;">                    &lt;plus-outlined /&gt;</span></span>
+<span class="line"><span style="color:#A6ACCD;">                  </span><span style="color:#89DDFF;">&lt;/</span><span style="color:#F07178;">template</span><span style="color:#89DDFF;">&gt;</span></span>
+<span class="line"><span style="color:#A6ACCD;">                  \u65B0\u589E\u4E3B\u4F53</span></span>
+<span class="line"><span style="color:#A6ACCD;">                </span><span style="color:#89DDFF;">&lt;/</span><span style="color:#FFCB6B;">a-button</span><span style="color:#89DDFF;">&gt;</span></span>
+<span class="line"><span style="color:#A6ACCD;">              </span><span style="color:#89DDFF;">&lt;/</span><span style="color:#FFCB6B;">a-space</span><span style="color:#89DDFF;">&gt;</span></span>
+<span class="line"><span style="color:#A6ACCD;">            </span><span style="color:#89DDFF;">&lt;/</span><span style="color:#F07178;">template</span><span style="color:#89DDFF;">&gt;</span></span>
+<span class="line"><span style="color:#A6ACCD;">          </span><span style="color:#89DDFF;">&lt;/</span><span style="color:#FFCB6B;">a-select</span><span style="color:#89DDFF;">&gt;</span></span>
+<span class="line"><span style="color:#A6ACCD;">        </span><span style="color:#89DDFF;">&lt;/</span><span style="color:#F07178;">template</span><span style="color:#89DDFF;">&gt;</span></span>
+<span class="line"><span style="color:#A6ACCD;">      </span><span style="color:#89DDFF;">&lt;/</span><span style="color:#FFCB6B;">BasicForm</span><span style="color:#89DDFF;">&gt;</span></span>
 <span class="line"><span style="color:#A6ACCD;">    </span><span style="color:#89DDFF;">&lt;/</span><span style="color:#F07178;">div</span><span style="color:#89DDFF;">&gt;</span></span>
-<span class="line"><span style="color:#A6ACCD;">  </span><span style="color:#89DDFF;">&lt;/</span><span style="color:#FFCB6B;">BasicModal</span><span style="color:#89DDFF;">&gt;</span></span>
-<span class="line"><span style="color:#89DDFF;">&lt;/</span><span style="color:#F07178;">template</span><span style="color:#89DDFF;">&gt;</span></span>
+<span class="line"><span style="color:#A6ACCD;">  </span><span style="color:#89DDFF;">&lt;/</span><span style="color:#A6ACCD;">BasicModal</span><span style="color:#89DDFF;">&gt;</span></span>
+<span class="line"><span style="color:#89DDFF;">&lt;/</span><span style="color:#A6ACCD;">template</span><span style="color:#89DDFF;">&gt;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#89DDFF;">&lt;</span><span style="color:#F07178;">style</span><span style="color:#89DDFF;"> </span><span style="color:#C792EA;">lang</span><span style="color:#89DDFF;">=</span><span style="color:#89DDFF;">&quot;</span><span style="color:#C3E88D;">less</span><span style="color:#89DDFF;">&quot;</span><span style="color:#89DDFF;">&gt;</span></span>
 <span class="line"><span style="color:#A6ACCD;">  .customClass </span><span style="color:#89DDFF;">{</span></span>
@@ -162,8 +184,25 @@ import{_ as s,o as n,c as a,a as l}from"./app.85806792.js";const i=JSON.parse('{
 <span class="line"><span style="color:#A6ACCD;">  </span><span style="color:#89DDFF;">}</span></span>
 <span class="line"><span style="color:#89DDFF;">&lt;/</span><span style="color:#F07178;">style</span><span style="color:#89DDFF;">&gt;</span></span>
 <span class="line"></span></code></pre></div><div class="language-js"><button class="copy"></button><span class="lang">js</span><pre><code><span class="line"><span style="color:#676E95;">// index.vue</span></span>
+<span class="line"><span style="color:#89DDFF;">&lt;</span><span style="color:#F07178;">script</span><span style="color:#89DDFF;"> </span><span style="color:#C792EA;">lang</span><span style="color:#89DDFF;">=</span><span style="color:#89DDFF;">&quot;</span><span style="color:#C3E88D;">ts</span><span style="color:#89DDFF;">&quot;</span><span style="color:#89DDFF;">&gt;</span></span>
+<span class="line"><span style="color:#A6ACCD;">  import </span><span style="color:#89DDFF;">{</span><span style="color:#A6ACCD;"> defineComponent </span><span style="color:#89DDFF;">}</span><span style="color:#A6ACCD;"> from &#39;vue&#39;;</span></span>
+<span class="line"></span>
+<span class="line"><span style="color:#A6ACCD;">  const VNodes = defineComponent(</span><span style="color:#89DDFF;">{</span></span>
+<span class="line"><span style="color:#A6ACCD;">    props: </span><span style="color:#89DDFF;">{</span></span>
+<span class="line"><span style="color:#A6ACCD;">      </span><span style="color:#F07178;">vnodes</span><span style="color:#89DDFF;">:</span><span style="color:#A6ACCD;"> </span><span style="color:#89DDFF;">{</span></span>
+<span class="line"><span style="color:#A6ACCD;">        </span><span style="color:#F07178;">type</span><span style="color:#89DDFF;">:</span><span style="color:#A6ACCD;"> Object</span><span style="color:#89DDFF;">,</span></span>
+<span class="line"><span style="color:#A6ACCD;">        </span><span style="color:#F07178;">required</span><span style="color:#89DDFF;">:</span><span style="color:#A6ACCD;"> </span><span style="color:#FF9CAC;">true</span><span style="color:#89DDFF;">,</span></span>
+<span class="line"><span style="color:#A6ACCD;">      </span><span style="color:#89DDFF;">},</span></span>
+<span class="line"><span style="color:#A6ACCD;">    </span><span style="color:#89DDFF;">},</span></span>
+<span class="line"><span style="color:#A6ACCD;">    </span><span style="color:#82AAFF;">render</span><span style="color:#A6ACCD;">() </span><span style="color:#89DDFF;">{</span></span>
+<span class="line"><span style="color:#A6ACCD;">      return this.vnodes;</span></span>
+<span class="line"><span style="color:#A6ACCD;">    </span><span style="color:#89DDFF;">},</span></span>
+<span class="line"><span style="color:#A6ACCD;">  </span><span style="color:#89DDFF;">}</span><span style="color:#A6ACCD;">);</span></span>
+<span class="line"><span style="color:#89DDFF;">&lt;/</span><span style="color:#F07178;">script</span><span style="color:#89DDFF;">&gt;</span></span>
+<span class="line"></span>
 <span class="line"><span style="color:#89DDFF;">&lt;</span><span style="color:#F07178;">script</span><span style="color:#89DDFF;"> </span><span style="color:#C792EA;">lang</span><span style="color:#89DDFF;">=</span><span style="color:#89DDFF;">&quot;</span><span style="color:#C3E88D;">ts</span><span style="color:#89DDFF;">&quot;</span><span style="color:#89DDFF;"> </span><span style="color:#C792EA;">setup</span><span style="color:#89DDFF;">&gt;</span></span>
 <span class="line"><span style="color:#A6ACCD;">  import </span><span style="color:#89DDFF;">{</span><span style="color:#A6ACCD;"> useModal </span><span style="color:#89DDFF;">}</span><span style="color:#A6ACCD;"> from &#39;/@/components/Modal&#39;;</span></span>
+<span class="line"><span style="color:#A6ACCD;">  import </span><span style="color:#89DDFF;">{</span><span style="color:#A6ACCD;"> PlusOutlined </span><span style="color:#89DDFF;">}</span><span style="color:#A6ACCD;"> from &#39;@ant-design/icons-vue&#39;;</span></span>
 <span class="line"><span style="color:#A6ACCD;">  import Modal from &#39;xxx&#39;;</span></span>
 <span class="line"></span>
 <span class="line"><span style="color:#A6ACCD;">  const [registerModal, </span><span style="color:#89DDFF;">{</span><span style="color:#A6ACCD;"> openModal </span><span style="color:#89DDFF;">}</span><span style="color:#A6ACCD;">] = useModal();</span></span>
@@ -700,4 +739,4 @@ import{_ as s,o as n,c as a,a as l}from"./app.85806792.js";const i=JSON.parse('{
 <span class="line"><span style="color:#A6ACCD;">    </span><span style="color:#89DDFF;">}</span><span style="color:#A6ACCD;">);</span></span>
 <span class="line"><span style="color:#A6ACCD;">  </span><span style="color:#89DDFF;">}</span><span style="color:#A6ACCD;">;</span></span>
 <span class="line"><span style="color:#89DDFF;">&lt;/</span><span style="color:#F07178;">script</span><span style="color:#89DDFF;">&gt;</span></span>
-<span class="line"></span></code></pre></div>`,10),e=[o];function F(c,t,r,D,y,C){return n(),a("div",null,e)}const u=s(p,[["render",F]]);export{i as __pageData,u as default};
+<span class="line"></span></code></pre></div>`,10),e=[o];function F(c,t,D,r,y,C){return n(),a("div",null,e)}const u=s(p,[["render",F]]);export{i as __pageData,u as default};
