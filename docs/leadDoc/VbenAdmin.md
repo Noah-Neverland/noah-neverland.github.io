@@ -160,7 +160,29 @@ export function getModalTagFormConfig(): Partial<FormProps> {
     @ok="handleSumbit"
   >
     <div class="p-4 scroll-wrap" v-loading="loading">
-      <BasicForm @register="register" />
+      <BasicForm @register="register">
+        // 下拉选里添加新增操作（可参考供应商模块新增主体）
+        <template #customSlot="{ model, field }">
+          <a-select v-model:value="model[field]" :options="options" placeholder="请选择">
+            <template #dropdownRender="{ menuNode: menu }">
+              <v-nodes :vnodes="menu" />
+              <a-divider style="margin: 4px 0" />
+              <a-space style="padding: 4px 8px">
+                <a-button
+                  type="text"
+                  @mousedown="(e) => e.preventDefault()"
+                  @click="openModal()"
+                >
+                  <template #icon>
+                    <plus-outlined />
+                  </template>
+                  新增主体
+                </a-button>
+              </a-space>
+            </template>
+          </a-select>
+        </template>
+      </BasicForm>
     </div>
   </BasicModal>
 </template>
@@ -180,8 +202,25 @@ export function getModalTagFormConfig(): Partial<FormProps> {
 
 ```js
 // index.vue
+<script lang="ts">
+  import { defineComponent } from 'vue';
+
+  const VNodes = defineComponent({
+    props: {
+      vnodes: {
+        type: Object,
+        required: true,
+      },
+    },
+    render() {
+      return this.vnodes;
+    },
+  });
+</script>
+
 <script lang="ts" setup>
   import { useModal } from '/@/components/Modal';
+  import { PlusOutlined } from '@ant-design/icons-vue';
   import Modal from 'xxx';
 
   const [registerModal, { openModal }] = useModal();
