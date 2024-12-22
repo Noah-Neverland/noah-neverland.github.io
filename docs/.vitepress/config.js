@@ -82,6 +82,7 @@ export default defineConfig({
             { text: 'Yalc', link: '/leadDoc/yalc.md' },
             { text: 'changeset', link: '/leadDoc/changeset.md' },
             { text: 'TypeScript', link: '/leadDoc/TypeScript.md' },
+            { text: 'Python', link: '/leadDoc/Python.md' },
           ],
         },
       ],
