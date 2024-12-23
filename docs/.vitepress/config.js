@@ -61,6 +61,7 @@ export default defineConfig({
             { text: 'utils', link: '/leadDoc/utils/utils.md' },
             { text: 'is', link: '/leadDoc/utils/is.md' },
             { text: 'dateUtil', link: '/leadDoc/utils/dateUtil.md' },
+            { text: '正则表达式', link: '/leadDoc/utils/正则表达式.md' },
           ],
         },
         {
