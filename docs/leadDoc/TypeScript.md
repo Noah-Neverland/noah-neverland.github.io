@@ -110,3 +110,19 @@ editLink: true
   ], // 将多个目录放在一个虚拟目录下，用于运行时，即编译后引入文件的位置可能发生变化，这也设置可以虚拟src和out在同一个目录下，不用再去改变路径也不会报错
 }
 ```
+
+## ts类型校验未通过导致打包失败
+
+打包命令去掉 tsc 相关命令即可
+
+example：
+
+```
+vue3:(vue-tsc --noEmit 去掉进行打包)
+
+"build": "vite build --config ./config/vite.config.prod.ts"
+
+react:(tsc -b 去掉)
+
+"vite build": "vite build"
+```
