@@ -85,6 +85,8 @@ export default defineConfig({
             { text: 'TypeScript', link: '/leadDoc/TypeScript.md' },
             { text: 'Python', link: '/leadDoc/Python.md' },
             { text: 'Linux', link: '/leadDoc/Linux.md' },
+            { text: 'Ubuntu', link: '/leadDoc/Ubuntu.md' },
+            { text: 'Docker', link: '/leadDoc/Docker.md' },
           ],
         },
       ],

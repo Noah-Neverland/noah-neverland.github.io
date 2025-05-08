@@ -58,3 +58,9 @@ scp filename username@ip_address:/home/username
 ```
 
 > [通过 SSH 在远程和本地系统之间传输文件的 4 种方法](https://blog.csdn.net/fuhanghang/article/details/134665553)
+
+
+### 提示su: Authentication failure
+```js
+sudo passwd root
+```
