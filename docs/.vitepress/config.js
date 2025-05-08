@@ -84,6 +84,7 @@ export default defineConfig({
             { text: 'changeset', link: '/leadDoc/changeset.md' },
             { text: 'TypeScript', link: '/leadDoc/TypeScript.md' },
             { text: 'Python', link: '/leadDoc/Python.md' },
+            { text: 'Linux', link: '/leadDoc/Linux.md' },
           ],
         },
       ],
