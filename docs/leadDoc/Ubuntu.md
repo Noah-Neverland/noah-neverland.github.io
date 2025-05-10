@@ -106,3 +106,28 @@ sed -i 's/http:\/\/updates.jenkins-ci.org\/download/https:\/\/mirrors.tuna.tsing
 id -u 用户名  // 输出指定用户的 UID
 id 用户名     // 显示 UID、GID 及所属组
 ```
+
+## 通过 Docker 安装 Nexus
+
+```js
+sudo mkdir -p /opt/nexus-data
+sudo chown -R 200:200 /opt/nexus-data
+sudo docker pull sonatype/nexus3:latest
+
+sudo docker run -d \
+--name nexus \
+-p 8081:8081 \
+-p 8082:8082 \
+-v /opt/nexus-data:/nexus-data \
+--restart unless-stopped \
+sonatype/nexus3:latest
+
+-d // 后台运行容器。
+--name nexus // 指定容器名称为nexus。
+-p 8081:8081 // 将宿主机的8081端口映射到容器的8081端口。
+-p 8082:8082 // Nexus仓库http端口
+-v /opt/nexus-data:/nexus-data // 将宿主机的/opt/nexus-data目录挂载到容器的/nexus-data目录，实现数据持久化。
+--restart unless-stoppe // 容器自动重启。
+```
+
+> 运行内存最好不低于4G
