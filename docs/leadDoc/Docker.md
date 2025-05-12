@@ -19,6 +19,8 @@ docker run -d -p HOST_PORT:CONTAINER_PORT image
 // -v /var/run/docker.sock:/var/run/docker.sock：将宿主机的Docker socket挂载到容器内，允许容器内调用Docker命令。
 // -v jenkins_home:/var/jenkins_home：使用Docker卷持久化Jenkins数据。
 // --restart unless-stopped：容器自动重启。
+
+docker exec -it -u 0 镜像名称/镜像ID /bin/bash // 通过root进入容器bash
 ```
 
 OPTIONS 说明:
@@ -103,13 +105,13 @@ docker pull jenkins/jenkins:lts
 
 ```js
 docker rmi -f 镜像ID // 删除单个
-docker rmi -f 镜像名1:TAG 镜像名2:TAG
-docker rmi -f $(docker images -q)
+docker rmi -f 镜像名1:TAG 镜像名2:TAG // 删除多个
+docker rmi -f $(docker images -q) // 删除所有镜像
 
 // 删除所有未被容器引用的镜像：
 docker image prune
 // 或者
-ocker image prune -a // 需要包括没有被容器引用但有标记的镜像，可以添加-a参数
+docker image prune -a // 需要包括没有被容器引用但有标记的镜像，可以添加-a参数
 
 // 删除特定时间前的镜像 docker image prune -a --filter "until=<duration>"
 // <duration>可以是秒、分钟、小时、天等时间单位。例如，删除所有创建时间超过7天的镜像：
@@ -130,6 +132,16 @@ docker image prune -a --filter "until=168h"
 开机启动: systemctl enable docker
 
 查看概要信息: docker info
+```
+
+## 编辑docker容器内文件的三种方法
+
+1. 在容器中修改
+> 如果vi命令没有,可以使用yum -y install vim或者apt-get install vim
+但是为了修改一个文件安装一个vim不合算
+2. 通过docker cp 命令，把想要修改的文件从docker容器拷贝到主机
+```js
+sudo docker cp container_id:/etc/mysql/my.cnf /home/config/
 ```
 
 ## 配置国内镜像源地址
