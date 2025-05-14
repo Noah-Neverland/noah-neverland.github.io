@@ -87,6 +87,7 @@ export default defineConfig({
             { text: 'Linux', link: '/leadDoc/Linux.md' },
             { text: 'Ubuntu', link: '/leadDoc/Ubuntu.md' },
             { text: 'Docker', link: '/leadDoc/Docker.md' },
+            { text: 'k8s', link: '/leadDoc/k8s.md' },
           ],
         },
       ],
