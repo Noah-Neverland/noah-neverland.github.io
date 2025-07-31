@@ -82,7 +82,7 @@ jobs:
   - 同样，在右边有个"New repository secret"按钮，点击就会进入新增页面
   - “Name”，就是宁设置的名称，和Token名称可以不一致；“Value”，就是上面宁创建的Token
 ## 相关资料
-[GitHub Actions 入门教程](https://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html)
+- [GitHub Actions 入门教程 阮一峰](https://www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html)
 
-[GITHUB_TOKEN配置参考资料](https://blog.csdn.net/ht370671963/article/details/111995883)
+- [GITHUB_TOKEN配置参考资料](https://blog.csdn.net/ht370671963/article/details/111995883)
 
