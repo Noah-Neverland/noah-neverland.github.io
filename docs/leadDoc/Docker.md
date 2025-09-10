@@ -21,6 +21,12 @@ docker run -d -p HOST_PORT:CONTAINER_PORT image
 // --restart unless-stopped：容器自动重启。
 
 docker exec -it -u 0 镜像名称/镜像ID /bin/bash // 通过root进入容器bash
+
+// mysql (docker exec -it mysql-server mysql -u root -p -e "SELECT NOW();")
+docker run -d --name mysql-server -p 3306:3306 -e MYSQL_ROOT_PASSWORD="******" -v ./mysql-data:/var/lib/mysql -e TZ=Asia/Shanghai mysql:[tag]
+
+// redis
+docker run -d --name redis-server -p 6379:6379 -v ./redis-data:/data redis --requirepass "******"
 ```
 
 OPTIONS 说明:
@@ -55,10 +61,11 @@ docker ps -q // 静默模式，只显示容器编号
 ```
 
 ### 退出容器
+
 - exit ：退出容器的前提是，本身已经已经进入到容器当中了。exit 方式退出了容器，容器本身也将会停止。
 - ctrl+p+q：run 进去容器，ctrl+p+q 退出，容器不会停止。
 
-### 从容器实例内拷贝文件到主机上—> docker cp 容器ID:容器内路径 目的主机路径
+### 从容器实例内拷贝文件到主机上—> docker cp 容器 ID:容器内路径 目的主机路径
 
 ```js
 docker cp 容器ID:filename 目标主机文件夹路径
@@ -134,12 +141,12 @@ docker image prune -a --filter "until=168h"
 查看概要信息: docker info
 ```
 
-## 编辑docker容器内文件的三种方法
+## 编辑 docker 容器内文件的三种方法
 
 1. 在容器中修改
-> 如果vi命令没有,可以使用yum -y install vim或者apt-get install vim
-但是为了修改一个文件安装一个vim不合算
-2. 通过docker cp 命令，把想要修改的文件从docker容器拷贝到主机
+   > 如果 vi 命令没有,可以使用 yum -y install vim 或者 apt-get install vim 但是为了修改一个文件安装一个 vim 不合算
+2. 通过 docker cp 命令，把想要修改的文件从 docker 容器拷贝到主机
+
 ```js
 sudo docker cp container_id:/etc/mysql/my.cnf /home/config/
 ```
