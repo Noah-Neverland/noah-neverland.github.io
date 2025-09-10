@@ -93,3 +93,70 @@ group: 新的文件拥有者的使用者组(group)
 ```js
 sudo passwd root
 ```
+
+### 解压缩(tar)
+
+压缩单个文件或目录
+
+```bash
+# 压缩一个目录（最常见）
+tar -czvf 压缩包名称.tar.gz 要压缩的目录或文件路径
+
+# 示例：将当前目录下的 'my_project' 文件夹打包为 'my_project.tar.gz'
+tar -czvf my_project.tar.gz my_project/
+```
+
+压缩多个文件或目录
+
+```bash
+# 压缩多个项目
+tar -czvf archive.tar.gz file1.txt folder1/ folder2/ image.png
+
+# 使用通配符（例如压缩所有 .log 文件）
+tar -czvf logs_backup.tar.gz *.log
+```
+
+压缩不包含当前文件夹
+
+```bash
+# 进入要打包的目录，然后打包其所有内容
+cd my_project
+tar -czvf ../archive.tar.gz ./*
+
+# 或者明确指定内容
+tar -czvf ../archive.tar.gz file1.txt file2.txt subdir/
+```
+
+解压到当前目录
+
+```bash
+tar -xzvf 压缩包名称.tar.gz
+# 示例：tar -xzvf my_project.tar.gz
+```
+
+解压到指定目录
+
+```bash
+tar -xzvf 压缩包名称.tar.gz -C /目标/目录/路径
+```
+
+解压 tar 包内容（不包含外层文件夹）
+
+```bash
+# 假设压缩包结构是：my_project/file1.txt, my_project/subdir/file2.txt
+# 使用 --strip-components=1 去掉第一层目录（my_project）
+tar -xzvf archive.tar.gz --strip-components=1
+
+#解压后效果：
+#原本会生成：./my_project
+#现在直接得到：./file1.txt 和 ./subdir/file2.txt
+```
+
+命令参数解释：
+
+- c：创建新的归档文件
+- x：从归档中解压文件
+- z：使用 gzip 进行压缩（生成 .tar.gz 或 .tgz 后缀）
+- v：显示详细处理过程（verbose）
+- f：指定归档文件名（必须参数）
+- -C：改变至指定目录后再执行操作

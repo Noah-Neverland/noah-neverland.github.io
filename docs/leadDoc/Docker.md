@@ -27,6 +27,9 @@ docker run -d --name mysql-server -p 3306:3306 -e MYSQL_ROOT_PASSWORD="******" -
 
 // redis
 docker run -d --name redis-server -p 6379:6379 -v ./redis-data:/data redis --requirepass "******"
+
+// nginx
+docker run -d --name web-docs -p 80:80 -v ./volumn/docs/html:/usr/share/nginx/html -v ./volumn/docs/conf.d:/etc/nginx/conf.d nginx
 ```
 
 OPTIONS 说明:
