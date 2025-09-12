@@ -30,6 +30,11 @@ docker run -d --name redis-server -p 6379:6379 -v ./redis-data:/data redis --req
 
 // nginx
 docker run -d --name web-docs -p 80:80 -v ./volumn/docs/html:/usr/share/nginx/html -v ./volumn/docs/conf.d:/etc/nginx/conf.d nginx
+
+// minio
+chmod -R 755 ./volumn/minio/ // 因为容器内用户（UID 1001）无法读写挂载的宿主机目录
+
+docker run -d --name minio-server -p 9000:9000 -p 9001:9001 -v ./volumn/minio:/bitnami/minio/data -e MINIO_ROOT_USER='******' -e MINIO_ROOT_PASSWORD='******' bitnami/minio server /bitnami/minio/data --console-address ":9001" --address ":9000"
 ```
 
 OPTIONS 说明:
