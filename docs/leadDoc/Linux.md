@@ -41,8 +41,8 @@ history - 查看命令历史记录。
 
 ### 如何查看所有快捷键
 
-```js
-bind - p;
+```bash
+bind -p;
 ```
 
 > [Linux 常用命令和快捷键大全](https://https://blog.csdn.net/nings666/article/details/129376693)
