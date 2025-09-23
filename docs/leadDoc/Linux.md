@@ -174,5 +174,3 @@ tar -xzvf archive.tar.gz --strip-components=1
 | `ls -R`    | 递归显示，列出所有子目录的内容                             | `ls -R`                |
 | `ls -d */` | 只显示目录本身，而不显示其内容                             | `ls -d */`             |
 | `ls -F`    | 在条目后添加类型指示符（/ 表示目录，\* 表示可执行文件      | `ls -F`                |
-
-123
