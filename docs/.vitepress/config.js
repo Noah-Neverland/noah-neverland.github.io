@@ -89,6 +89,7 @@ export default defineConfig({
             { text: 'Docker', link: '/leadDoc/Docker.md' },
             { text: 'k8s', link: '/leadDoc/k8s.md' },
             { text: 'Electron', link: '/leadDoc/Electron.md' },
+            { text: 'Jenkins', link: '/leadDoc/Jenkins.md' },
           ],
         },
       ],
