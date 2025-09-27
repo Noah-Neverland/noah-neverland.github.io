@@ -174,3 +174,24 @@ tar -xzvf archive.tar.gz --strip-components=1
 | `ls -R`    | 递归显示，列出所有子目录的内容                             | `ls -R`                |
 | `ls -d */` | 只显示目录本身，而不显示其内容                             | `ls -d */`             |
 | `ls -F`    | 在条目后添加类型指示符（/ 表示目录，\* 表示可执行文件      | `ls -F`                |
+
+### find 命令
+
+```bash
+# 查询/mnt目录下所有.log的文件大小
+# 注：xargs组合多个命令的一个工具
+find /mnt -type f -name "*.log"|xargs du -sh;
+
+# 复制/mnt目录下所有的.log后缀的文件到./logs下
+find /mnt -type f -name "*.log" -exec cp -a {} ./logs \;
+
+# find过滤(find排除)文件和目录
+# 注：/mnt目录内 过滤test目录内所有文件，并同时过滤filename.txt这个文件
+find /mnt/ -type f -path "/mnt/test/*" -o -path "/mnt/filename.txt" -o -type f -name "*.log" -prient;
+
+# 把查出来的文件打成一个包
+find /mnt/ -type f -path "/mnt/test/*" -o -path "/mnt/filename.txt" -o -type f -name "*.log" -prient|xargs tar zcvf alllogs.tar.gz;
+
+# 把查出来的文件分别打成一个包
+find /mnt/ -type f -path "/mnt/test/*" -o -path "/mnt/filename.txt" -o -type f -name "*.log" -prient -exec tar zcvf {}.tar.gz {} \;
+```
