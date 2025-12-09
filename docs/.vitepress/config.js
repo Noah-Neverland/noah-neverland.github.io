@@ -91,6 +91,7 @@ export default defineConfig({
             { text: 'Electron', link: '/leadDoc/Electron.md' },
             { text: 'Jenkins', link: '/leadDoc/Jenkins.md' },
             { text: 'Cron', link: '/leadDoc/Cron.md' },
+            { text: 'Npm', link: '/leadDoc/Npm.md' },
           ],
         },
       ],
