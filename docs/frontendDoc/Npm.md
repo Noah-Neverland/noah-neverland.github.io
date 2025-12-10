@@ -16,9 +16,9 @@ Usage
 ```js
 concurrently 'command1 arg' 'command2 arg'
 
-concurrently -n \"frontend,backend,electron\" -c \"blue,green,yellow\" \"npm run dev:frontend\" \"npm run dev:backend\" \"npm run dev:electron:wait\"
+concurrently -n \"frontendDoc,backend,electron\" -c \"blue,green,yellow\" \"npm run dev:frontendDoc\" \"npm run dev:backend\" \"npm run dev:electron:wait\"
 
-concurrently \"npm run start:backend\" \"wait-on http://localhost:5000 && npm run start:frontend\"
+concurrently \"npm run start:backend\" \"wait-on http://localhost:5000 && npm run start:frontendDoc\"
 ```
 
 > 同时运行多个命令，类似于 npm run watch-js & npm run watch-less

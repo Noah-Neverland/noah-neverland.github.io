@@ -22,7 +22,7 @@ yarn build
 
 ## 项目结构
 
-![An image](../public/assets/leadDoc/image-20220121160154956.png)
+![An image](../public/assets/frontendDoc/image-20220121160154956.png)
 
 ## 配置文件解析
 
