@@ -38,6 +38,7 @@ export default defineConfig({
           items: [
             { text: '运维部署测试', link: '/noah/knt/运维' },
             { text: '互医项目', link: '/noah/knt/互医项目' },
+            { text: '信息化项目', link: '/noah/knt/信息化项目' },
           ],
         },
       ],
