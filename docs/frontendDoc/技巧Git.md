@@ -161,3 +161,22 @@ git remote set-url origin <新的仓库地址>
 ```js
 git log --oneline --decorate --graph --all
 ```
+
+## 设置vpn代理
+```js
+// 单个项目
+git config http.proxy [反代理地址]
+// 全局配置
+git config --global http.proxy [反代理地址]
+```
+> 主要用于github等需要梯子的仓库
+
+## 删除配置项
+```js
+// 使用以下命令取消全局配置项
+git config --global --unset user.email
+// 如果你想取消当前仓库的本地配置，可以使用以下命令：
+git config --local --unset <配置项名称>
+// 如果需要清空全局配置中的所有条目，可以使用以下命令
+git config --global --unset-all
+```
