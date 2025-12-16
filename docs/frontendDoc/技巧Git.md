@@ -180,3 +180,12 @@ git config --local --unset <配置项名称>
 // 如果需要清空全局配置中的所有条目，可以使用以下命令
 git config --global --unset-all
 ```
+
+## 修改git commit的author信息
+```bash
+$ git config user.name 'b'
+$ git config user.email b@email.com
+
+$ git commit --amend --reset-author
+```
+> [https://blog.csdn.net/mocoe/article/details/84344411](https://blog.csdn.net/mocoe/article/details/84344411)
