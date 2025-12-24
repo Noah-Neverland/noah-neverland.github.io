@@ -76,6 +76,12 @@ export default defineConfig({
           ],
         },
         {
+          text: 'Npm Package',
+          collapsible: true,
+          // collapsed: true,
+          items: [{ text: '@noahhp/rich-editor', link: '/frontendDoc/CanvasEditor.md' }],
+        },
+        {
           text: '技术文档',
           collapsible: true,
           // collapsed: true,
@@ -117,8 +123,8 @@ export default defineConfig({
             { text: 'Docker', link: '/devOpsDoc/Docker.md' },
             { text: 'k8s', link: '/devOpsDoc/k8s.md' },
             { text: 'Jenkins', link: '/devOpsDoc/Jenkins.md' },
-             { text: 'GithubSynsToGitee', link: '/devOpsDoc/GithubSynsToGitee' },
-             { text: 'Nginx', link: '/devOpsDoc/Nginx' },
+            { text: 'GithubSynsToGitee', link: '/devOpsDoc/GithubSynsToGitee' },
+            { text: 'Nginx', link: '/devOpsDoc/Nginx' },
           ],
         },
       ],
