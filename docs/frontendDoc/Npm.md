@@ -281,6 +281,19 @@ npm version patch
 npm publish
 ```
 
+### 5.撤销本地更改
+
+```bash
+# 1.删除 Git 标签：首先，删除 npm version 命令创建的 Git 标签。假设错误的版本是 v1.1.0，执行：
+git tag -d v1.1.0
+
+# 警告：如果标签已经推送到远程仓库，你还需要在远程删除它：
+git push origin --delete v1.1.0
+
+# 2.手动修正 package.json：将 package.json 中的 version 字段手动改回之前的正确版本，例如从 "1.1.0" 改回 "1.0.1"
+npm version patch # 例如，从 1.0.1 升级到 1.0.2
+```
+
 ⚠️ **注意**：撤回已发布的包会影响依赖该包的项目，应尽量避免。
 
 ## 🔐 安全建议
