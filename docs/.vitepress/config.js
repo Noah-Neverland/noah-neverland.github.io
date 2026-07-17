@@ -125,6 +125,7 @@ export default defineConfig({
             { text: 'Jenkins', link: '/devOpsDoc/Jenkins.md' },
             { text: 'GithubSynsToGitee', link: '/devOpsDoc/GithubSynsToGitee' },
             { text: 'Nginx', link: '/devOpsDoc/Nginx' },
+            { text: 'dnsmasq', link: '/devOpsDoc/dnsmasq' },
           ],
         },
       ],
