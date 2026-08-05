@@ -73,6 +73,7 @@ export default defineConfig({
           items: [
             { text: 'VbenAdmin', link: '/frontendDoc/VbenAdmin.md' },
             { text: 'AntDesignVue', link: '/frontendDoc/AntDesignVue' },
+            { text: 'KntShared', link: '/frontendDoc/KntShared' },
           ],
         },
         {
