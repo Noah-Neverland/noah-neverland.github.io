@@ -178,6 +178,17 @@ const schemas: FormSchema[] = [
         { label: '启用', value: 1 },
         { label: '禁用', value: 0 },
       ],
+      // 下拉选过长不省略展示
+      triggerProps: {
+        autoFitPopupMinWidth: true,
+      },
+      // 虚拟列表配置
+      // height-可视高度
+      // buffer-视口边界外提前挂载的元素数量
+      // threshold-开启虚拟滚动的元素数量阈值，当数据数量小于阈值时不会开启虚拟滚动
+      // fixedSize-元素高度是否是固定的
+      // estimatedSize-元素高度不固定时的预估高度
+      virtualListProps: { height: 200, buffer: 5, threshold: 100 },
     },
   },
 ];
