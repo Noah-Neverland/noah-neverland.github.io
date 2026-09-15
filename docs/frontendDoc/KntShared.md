@@ -191,6 +191,26 @@ const schemas: FormSchema[] = [
       virtualListProps: { height: 200, buffer: 5, threshold: 100 },
     },
   },
+  {
+    field: 'statisticsDate',
+    label: '日期',
+    component: 'DatePicker',
+    defaultValue: dayjs().subtract(1, 'day').format('YYYY-MM-DD'), // 当前日期
+    componentProps: {
+      allowClear: false,
+      style: { width: '100%' },
+      showNowBtn: false,
+      disabledDate: (current) => {
+        // 当前日期前的日期不可选择（不包括当前日期）
+        return dayjs(current).isAfter(dayjs().subtract(1, 'day')); 
+        // 1、不可选当前日期之前（今天可选，昨天及之前禁用) 2、不可选今天往后 90 天之外（今天 + 90 天可选，第 91 天起禁用）
+        // return (current) => {
+        //   const today = dayjs().startOf('day'); 
+        //   return dayjs(current).isBefore(today) || dayjs(current).isAfter(today.add(90, 'day'));
+        // };
+      },
+    },
+  },
 ];
 
 function handleSubmit(values: Record<string, any>) {
