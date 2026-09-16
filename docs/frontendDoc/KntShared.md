@@ -182,6 +182,7 @@ const schemas: FormSchema[] = [
       triggerProps: {
         autoFitPopupMinWidth: true,
       },
+      allowSearch: { retainInputValue: true }, // 支持搜索，且搜索内容不清空
       // 虚拟列表配置
       // height-可视高度
       // buffer-视口边界外提前挂载的元素数量
